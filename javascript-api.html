@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="map" style="width:562px; height: 564px;"></div>
+
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+        var myLatIng = new google.maps.LatLng(49.53994, 8.65786);  //Koordinaten des Ortes
+        var myOptions = {
+            center: myLatIng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+        //Erzeugt die rote Markierung auf der Karte
+        var marker = new google.maps.Marker({
+            position: myLatIng,
+            map: map
+        });
+    };
+  </script>
+</body>
+</html>
