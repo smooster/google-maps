@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+
+<h1> Javascript API-Einbindung </h1>
+<br>
+  <div id="map" style="width:562px; height: 564px;"></div>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+        var myLatIng = new google.maps.LatLng(49.53994, 8.65786);
+        var myOptions = {
+            center: myLatIng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatIng,
+            map: map
+        });
+    };
+  </script>
+  <hr>
+  <hr>
+  <br>
+  <h1> IFrame-Einbindung </h1>
+  <br>
+  <iframe width="600" height="300" src="http://maps.google.de/maps?hl=de&q=Thaddenstraße 14a+(IM-Concepts GmbH)&ie=UTF8&z=15&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ></iframe>
+
+    <hr>
+    <hr>
+    <br>
+
+    <h1>Static-Map Einbindung </h1>
+    <br>
+      <img src="http://maps.google.com/maps/api/staticmap?center=49.53994,8.65786&amp;zoom=15&amp;markers=+Thaddenstraße 14a, Weinheim&amp;size=350x450&amp;sensor=false">
+
+</body>
+</html>
